@@ -29,7 +29,15 @@ public class Main {
                 squareRaster.execute(), "RASTER square side=3");
 
         checkRuntimeSwitch();
+        Renderer ascii = new AsciiRenderer();
 
+        check("T6", "Circle + AsciiRenderer",
+                new Circle("circle-1", 2, ascii).execute(),
+                "ASCII circle radius=2");
+
+        check("T7", "Square + AsciiRenderer",
+                new Square("square-1", 3, ascii).execute(),
+                "ASCII square side=3");
         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
 
         if (passed != total) {
